@@ -1,16 +1,19 @@
-# Jarvis Voice Assistant 🎙️
+# JARVIS AI Assistant 🎙️
 
-A Python-based voice assistant that performs basic automation tasks using voice commands.
+A futuristic desktop voice assistant built with Python that can perform basic automation tasks using voice commands through a modern Jarvis-inspired interface.
 
-## ✨ Features
+---
 
-* Wake word activation (`Jarvis`)
-* Voice command recognition
-* Open websites like Google & YouTube
-* Play songs using voice commands
+# ✨ Features
+
+* Wake-word based activation
+* Real-time voice recognition
 * Text-to-speech responses
-* Noise adjustment for microphone
-* Logging & exception handling
+* Modern Jarvis-style desktop UI
+* Open websites using voice commands
+* Play songs directly from voice input
+* Live assistant status updates
+* Multi-threaded responsive interface
 
 ---
 
@@ -20,15 +23,20 @@ A Python-based voice assistant that performs basic automation tasks using voice 
 * SpeechRecognition
 * pyttsx3
 * PyAudio
+* CustomTkinter
 
 ---
 
 # 📂 Project Structure
 
 ```bash
-jarvis-voice-assistant/
+jarvis/
 │
 ├── main.py
+├── assistant.py
+├── commands.py
+├── ui.py
+│
 ├── requirements.txt
 ├── .gitignore
 └── README.md
@@ -38,51 +46,36 @@ jarvis-voice-assistant/
 
 # ⚙️ How It Works
 
-1. Program continuously listens for the wake word:
+1. User launches the application
+2. Jarvis UI opens
+3. User clicks:
 
    ```text
-   Jarvis
+   🎤 Start Jarvis
    ```
-
-2. Once activated, user can give commands like:
-
-   ```text
-   open google
-   open youtube
-   play sajde
-   ```
-
-3. Assistant processes the command and performs the action.
-
-4. User can stop assistant using:
-
-   ```text
-   close
-   ```
-
-   or
-
-   ```text
-   exit
-   ```
+4. Assistant starts listening for commands
+5. User gives voice command
+6. Jarvis processes and executes the task
+7. Response is shown on UI and spoken aloud
 
 ---
 
-# 🎯 User Benefits
+# 🎯 Supported Commands
 
-* Hands-free computer interaction
-* Quick website access
-* Instant music playback
-* Beginner-friendly automation system
-* Learn voice recognition & Python automation
+```text
+open google
+open youtube
+play sajde
+close
+```
 
 ---
 
-# 🛠️ Customization
+# 🎵 Music Playback
 
-## 🎵 Add/Remove Songs
+Songs are stored inside the `SONGS` dictionary in `commands.py`.
 
-Modify the `SONGS` dictionary in `main.py`:
+Example:
 
 ```python
 SONGS = {
@@ -91,7 +84,7 @@ SONGS = {
 }
 ```
 
-Then say:
+User can then say:
 
 ```text
 play believer
@@ -99,18 +92,22 @@ play believer
 
 ---
 
-## 🌐 Add New Website Commands
+# 🌐 Add Custom Commands
 
-Inside `execute_command()`:
+Inside `commands.py`:
 
 ```python
 elif "open github" in command_text:
     open_website("https://github.com")
 ```
 
+Now Jarvis can open GitHub using voice commands.
+
 ---
 
-## 🗣️ Change Wake Word
+# 🗣️ Change Wake Word
+
+Inside `assistant.py`:
 
 ```python
 WAKE_WORD = "jarvis"
@@ -124,62 +121,43 @@ WAKE_WORD = "alexa"
 
 ---
 
-## 🔊 Change Voice Settings
+# 💻 Local Setup
 
-```python
-engine.setProperty("rate", 170)
-engine.setProperty("volume", 1.0)
+## Clone Repository
+
+```bash
+git clone https://github.com/yourusername/jarvis-ai-assistant.git
 ```
 
 ---
 
-# 💻 Local Setup
-
-## 1. Clone Repository
+## Navigate to Project Folder
 
 ```bash
-git clone https://github.com/yourusername/jarvis-voice-assistant.git
+cd jarvis-ai-assistant
 ```
 
-## 2. Navigate to Project
+---
 
-```bash
-cd jarvis-voice-assistant
-```
-
-## 3. Create Virtual Environment
+## Create Virtual Environment
 
 ### Mac/Linux
 
 ```bash
 python3 -m venv .venv
-```
-
-### Windows
-
-```bash
-python -m venv .venv
-```
-
----
-
-## 4. Activate Virtual Environment
-
-### Mac/Linux
-
-```bash
 source .venv/bin/activate
 ```
 
 ### Windows
 
 ```bash
+python -m venv .venv
 .venv\Scripts\activate
 ```
 
 ---
 
-## 5. Install Dependencies
+## Install Dependencies
 
 ```bash
 pip install -r requirements.txt
@@ -187,7 +165,7 @@ pip install -r requirements.txt
 
 ---
 
-# ▶️ Run The Program
+# ▶️ Run Application
 
 ### Mac/Linux
 
@@ -203,9 +181,22 @@ python main.py
 
 ---
 
+# 🖥️ UI Highlights
+
+* Dark futuristic theme
+* Jarvis-inspired desktop interface
+* Live command output
+* Real-time status updates
+* Responsive multi-threaded UI
+
+---
+
 # 🚀 Future Improvements
 
-* AI integration
+* AI chatbot integration
+* Voice waveform animation
+* Weather updates
+* System control automation
 * Multi-language support
 
 ---
@@ -213,16 +204,15 @@ python main.py
 # ⚠️ Requirements
 
 * Python 3.10+
-* Internet connection
 * Working microphone
+* Internet connection
 
 ---
 
 # 👨‍💻 Author
 
-Ayush Raj
+**Ayush Raj (Code and implementation of logic)**
 
-Pushpanjali Kumari
-
+**Pushpanjali Kumari ( Designed UI )**
 
 GitHub: https://github.com/ayush-5158
